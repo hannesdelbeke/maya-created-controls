@@ -11,7 +11,7 @@
     ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     // all inpust 
     float $colorR,$colorG,$colorB;
-    string $put = "C:/Users/H/Documents/maya/2026/scripts/";
+    string $put = `getenv "CREATED_CONTROL_TOOLS"`;  //"C:/Users/H/Documents/maya/2026/scripts/";
     string $Buts = "";
     
    // NewContr ($put,$Buts);
