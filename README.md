@@ -23,3 +23,4 @@ A Maya module based on the original script written by stac9350
 
 ## Plugget
 _To be used as a demo repo to test Maya module installations with [plugget](https://github.com/plugget/plugget)_
+- [plugget manifest](https://github.com/plugget/plugget-pkgs/tree/main/maya/created-controls)
