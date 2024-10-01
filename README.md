@@ -1,5 +1,13 @@
 A control creator for Maya (written in Mel)  
-Tested in Maya 2026. Most of this was created in Maya 2022.
+Tested in Maya 2026. Most of this was created in Maya 2022.  
+
+Based on the original script written by stac9350 - Stanislav Slavyanov     
+> telegram - @stac9350  
+> mail - stac9350@gmail.com
+
+- [watch](https://youtu.be/vVcceGPmFYk?si=5axL7MENpLXDv39Q) a demo on youtube 
+- download the original script on artstation [here](https://www.artstation.com/marketplace/p/DBXx0/maya-script-created-controls)  
+
  
 ![image](https://github.com/user-attachments/assets/082ca02a-e1a5-454c-b615-537646f9bd4a)
 
@@ -11,15 +19,6 @@ Tested in Maya 2026. Most of this was created in Maya 2022.
   - When I try run it from python or using `source` in [[Maya MEL|mel]], i notice the non global procs don't work. I convert them to global.
   - When I add the file in the maya script path, and run it from mel with the script name, it doesn't work because there's a `.` in the name. convert this to `_` fixes that.
 - wrapped this script in a python plugin so it can be enabled/disabled
-
-## original info
-Based on the original script written by stac9350 - Stanislav Slavyanov,    
-telegram - @stac9350  
-mail - stac9350@gmail.com  
-Creation Date:		leta 7532.07 (June - 2024)  
-
-- watch a demo on youtube  https://youtu.be/vVcceGPmFYk?si=5axL7MENpLXDv39Q
-- download the original script on artstation https://www.artstation.com/marketplace/p/DBXx0/maya-script-created-controls
 
 ## Plugget
 _To be used as a demo repo to test Maya module installations with [plugget](https://github.com/plugget/plugget)_
