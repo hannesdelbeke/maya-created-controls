@@ -1,4 +1,7 @@
 A control creator for Maya (written in Mel)  
+
+![image](https://github.com/user-attachments/assets/082ca02a-e1a5-454c-b615-537646f9bd4a)
+
 Tested in Maya 2026. Most of this was created in Maya 2022.  
 
 A Maya module based on the original script written by stac9350 
@@ -8,10 +11,7 @@ A Maya module based on the original script written by stac9350
 
 - [watch](https://youtu.be/vVcceGPmFYk?si=5axL7MENpLXDv39Q) a demo on youtube 
 - download the original script on artstation [here](https://www.artstation.com/marketplace/p/DBXx0/maya-script-created-controls)  
-
  
-![image](https://github.com/user-attachments/assets/082ca02a-e1a5-454c-b615-537646f9bd4a)
-
 ## updates in this repo
 - packages the control creator in a Maya module for easy distribution, without needing to edit the code
 - fix some bugs
