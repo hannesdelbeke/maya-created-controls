@@ -11,13 +11,14 @@
     ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     // all inpust 
     float $colorR,$colorG,$colorB;
-    string $put = "C:/Users/stac9/Documents/maya/2022/scripts/";
+    string $put = "C:/Users/H/Documents/maya/2026/scripts/";
     string $Buts = "";
-    Created_Controls_win ($put);
-    NewContr ($put,$Buts);
-    button_1 ($colorR, $colorG, $colorB);
+    
+   // NewContr ($put,$Buts);
+   // button_1 ($colorR, $colorG, $colorB);
+
     // Burron Created Controls///////////////////////
-      proc NewContr (string $put, string $Buts){
+      global proc NewContr (string $put, string $Buts){
         $select = `ls -sl`;
         $Sselect = `size($select)`;
         int $selSc= `floatField -q -v ScaleInpCtr`;
@@ -129,8 +130,10 @@
             
              }
         } 
+
+        
     // Buttons Colors ///////////////////////////////
-        proc reset_Button (){
+        global proc reset_Button (){
             $sel=`ls -sl -long`;
             for ($i=0; $i < size($sel); $i++ ){ 
             setAttr ($sel[$i] + ".overrideEnabled") 1;  
@@ -141,7 +144,7 @@
             setAttr ($sel[$i] + ".outlinerColor") 0 0 0 ;
             } 
             }
-        proc button_1(float $colorR, float $colorG, float $colorB){
+        global proc button_1(float $colorR, float $colorG, float $colorB){
             $sel=`ls -sl -long`;
             for ($i=0; $i < size($sel); $i++ ){ 
             setAttr ($sel[$i] + ".overrideEnabled") 1;  
@@ -155,7 +158,7 @@
             }
     // Buttons Mirror and Locks /////////////////////  
     //Select lockALL- Lock X or Y or Z   
-        proc CheckBoxTr_s(){
+        global proc CheckBoxTr_s(){
         if (`checkBox -q -v Tr_Lok_off_on`){
                 checkBox -e -v 1 TrX_Lok_off_on;
                 checkBox -e -v 1 TrY_Lok_off_on;
@@ -167,7 +170,7 @@
                 checkBox -e -v 0 TrZ_Lok_off_on;
             }
         }
-        proc CheckBoxRt_s(){
+        global proc CheckBoxRt_s(){
         if (`checkBox -q -v Rt_Lok_off_on`){
                 checkBox -e -v 1 RtX_Lok_off_on;
                 checkBox -e -v 1 RtY_Lok_off_on;
@@ -179,7 +182,7 @@
                 checkBox -e -v 0 RtZ_Lok_off_on;
             }
         }
-        proc CheckBoxSc_s() {
+        global proc CheckBoxSc_s() {
         if (`checkBox -q -v Sc_Lok_off_on`){
                 checkBox -e -v 1 ScX_Lok_off_on;
                 checkBox -e -v 1 ScY_Lok_off_on;
@@ -272,124 +275,124 @@
         }
     // Commands for translate, rotate, scale - lock/unlock  
        //  XYZ ////////////////////////////////////////////////
-        proc Tr_lock_on(){
+        global proc Tr_lock_on(){
             $selecte = `ls -sl`;
             setAttr -l true  -typ $selecte ".tx";
             setAttr -l true  -typ $selecte ".ty";
             setAttr -l true  -typ $selecte ".tz";
          }
 
-        proc Tr_lock_off(){
+        global proc Tr_lock_off(){
             $selecte = `ls -sl`;
             setAttr -l false  -typ $selecte ".tx";
             setAttr -l false  -typ $selecte ".ty";
             setAttr -l false  -typ $selecte ".tz";
          }
         //
-        proc Rt_lock_on(){
+        global proc Rt_lock_on(){
             $selecte = `ls -sl`;
             setAttr -l true  -typ $selecte ".rx";
             setAttr -l true  -typ $selecte ".ry";
             setAttr -l true  -typ $selecte ".rz";  
          }
 
-        proc Rt_lock_off() {
+        global proc Rt_lock_off() {
             $selecte = `ls -sl`;
             setAttr -l false  -typ $selecte ".rx";
             setAttr -l false  -typ $selecte ".ry";
             setAttr -l false  -typ $selecte ".rz";   
          }
         //
-        proc Sc_lock_on(){
+        global proc Sc_lock_on(){
             $selecte = `ls -sl`;
             setAttr -l true  -typ $selecte ".sx";
             setAttr -l true  -typ $selecte ".sy";
             setAttr -l true  -typ $selecte ".sz";  
          }
-        proc Sc_lock_off(){
+        global proc Sc_lock_off(){
             $selecte = `ls -sl`;
             setAttr -l false  -typ $selecte ".sx";
             setAttr -l false  -typ $selecte ".sy";
             setAttr -l false  -typ $selecte ".sz";   
          }
        // X //////////////////////////////////////////////////
-        proc TrX_lock_on(){
+        global proc TrX_lock_on(){
          $selecte = `ls -sl`;
          setAttr -l true  -typ $selecte ".tx";
          }
-        proc TrX_lock_off(){
+        global proc TrX_lock_off(){
          $selecte = `ls -sl`;
          setAttr -l false  -typ $selecte ".tx";
          }
         //
-        proc RtX_lock_on(){
+        global proc RtX_lock_on(){
          $selecte = `ls -sl`;
          setAttr -l true  -typ $selecte ".rx";
          }
-        proc RtX_lock_off(){
+        global proc RtX_lock_off(){
          $selecte = `ls -sl`;
          setAttr -l false  -typ $selecte ".rx";
          }
         //
-        proc ScX_lock_on(){
+        global proc ScX_lock_on(){
          $selecte = `ls -sl`;
          setAttr -l true  -typ $selecte ".sx";
          }
-        proc ScX_lock_off(){
+        global proc ScX_lock_off(){
          $selecte = `ls -sl`;
          setAttr -l false  -typ $selecte ".sx";
          }
        // Y //////////////////////////////////////////////////
-        proc TrX_lock_on(){
+        global proc TrY_lock_on(){
          $selecte = `ls -sl`;
          setAttr -l true  -typ $selecte ".ty";
          }
-        proc TrX_lock_off(){
+        global proc TrY_lock_off(){
          $selecte = `ls -sl`;
          setAttr -l false  -typ $selecte ".ty";
          }
         //
-        proc RtX_lock_on(){
+        global proc RtY_lock_on(){
          $selecte = `ls -sl`;
          setAttr -l true  -typ $selecte ".ry";
          }
-        proc RtX_lock_off(){
+        global proc RtY_lock_off(){
          $selecte = `ls -sl`;
          setAttr -l false  -typ $selecte ".ry";
          }
         //
-        proc ScX_lock_on(){
+        global proc ScY_lock_on(){
          $selecte = `ls -sl`;
          setAttr -l true  -typ $selecte ".sy";
          }
-        proc ScX_lock_off(){
+        global proc ScY_lock_off(){
          $selecte = `ls -sl`;
          setAttr -l false  -typ $selecte ".sy";
          }
        // Z /////////////////////////////////////////////////
-        proc TrX_lock_on(){
+        global proc TrZ_lock_on(){
          $selecte = `ls -sl`;
          setAttr -l true  -typ $selecte ".tz";
          }
-        proc TrX_lock_off(){
+        global proc TrZ_lock_off(){
          $selecte = `ls -sl`;
          setAttr -l false  -typ $selecte ".tz";
          }
         //
-        proc RtX_lock_on(){
+        global proc RtZ_lock_on(){
          $selecte = `ls -sl`;
          setAttr -l true  -typ $selecte ".rz";
          }
-        proc RtX_lock_off(){
+        global proc RtZ_lock_off(){
          $selecte = `ls -sl`;
          setAttr -l false  -typ $selecte ".rz";
          }
         //
-        proc ScX_lock_on(){
+        global proc ScZ_lock_on(){
          $selecte = `ls -sl`;
          setAttr -l true  -typ $selecte ".sz";
          }
-        proc ScX_lock_off(){
+        global proc ScZ_lock_off(){
          $selecte = `ls -sl`;
          setAttr -l false  -typ $selecte ".sz";
          }  
@@ -411,7 +414,7 @@
         setParent..;
     //Icons
      columnLayout;         
-            frameLayout -l "                                     Controls" -borderStyle "in";
+            frameLayout -l "                                     Controls";
       rowLayout -nc 5 ;
             text "            ";
             checkBox -label "Parent"
@@ -509,29 +512,37 @@
         setParent..;
         text "________________________________________________________________________";
     // MIrror and Locks
-        columnLayout; 
+        columnLayout -height 150;  //Bug required explicit defining the height to avoid clipping in UI 
         rowLayout -nc 2;
             text "                Lock                                 ";
             button -label "Miror control" -c "comandMirror($controlSelect)" ;
         setParent..;
-        gridLayout -nc 5 -cwh 50 20;
+        
+        gridLayout -numberOfColumns 5 -cellWidthHeight 50 20 -autoGrow true;
         radioCollection;
                 string $controlSelect="scaleX";
+                // ROW 1
                 checkBox -cc"CheckBoxTr_s" -onc Tr_lock_on -ofc Tr_lock_off -l "Tr" Tr_Lok_off_on;
                 checkBox -cc"CheckBoxRt_s" -onc Rt_lock_on -ofc Rt_lock_off -l "Rt" Rt_Lok_off_on;
                 checkBox -cc"CheckBoxSc_s" -onc Sc_lock_on -ofc Sc_lock_off -l "Sc" Sc_Lok_off_on;
                 text"      ";
                 radioButton -sl -l "X" -cc "$controlSelect=\"scaleX\"";
+
+                // ROW 2
                 checkBox -onc TrX_lock_on -ofc TrX_lock_off -l "X" TrX_Lok_off_on;
                 checkBox -onc RtX_lock_on -ofc RtX_lock_off -l "X" RtX_Lok_off_on;
                 checkBox -onc ScX_lock_on -ofc ScX_lock_off -l "X" ScX_Lok_off_on;
                 text"      ";
                 radioButton -l "Y" -cc "$controlSelect=\"scaleY\"";
+                
+                // ROW 3
                 checkBox -onc TrY_lock_on -ofc TrY_lock_off -l "Y" TrY_Lok_off_on;
                 checkBox -onc RtY_lock_on -ofc RtY_lock_off -l "Y" RtY_Lok_off_on;
                 checkBox -onc ScY_lock_on -ofc ScY_lock_off -l "Y" ScY_Lok_off_on;
                 text"      ";
                 radioButton -l "Z" -cc "$controlSelect=\"scaleZ\"";
+                
+                // ROW 4
                 checkBox -onc TrZ_lock_on -ofc TrZ_lock_off -l "Z" TrZ_Lok_off_on;
                 checkBox -onc RtZ_lock_on -ofc RtZ_lock_off -l "Z" RtZ_Lok_off_on;
                 checkBox -onc ScZ_lock_on -ofc ScZ_lock_off -l "Z" ScZ_Lok_off_on;
@@ -541,3 +552,4 @@
     showWindow ;
     }
     
+    Created_Controls_win ($put);
