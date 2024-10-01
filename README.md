@@ -1,7 +1,7 @@
 A control creator for Maya (written in Mel)  
 Tested in Maya 2026. Most of this was created in Maya 2022.  
 
-A maya module based on the original script written by stac9350 
+A Maya module based on the original script written by stac9350 
 > Stanislav Slavyanov     
 > telegram - @stac9350  
 > mail - stac9350@gmail.com
