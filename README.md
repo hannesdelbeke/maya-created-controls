@@ -1,4 +1,5 @@
 A control creator for Maya (written in Mel)  
+Tested in Maya 2026. Most of this was created in Maya 2022.
  
 ![image](https://github.com/user-attachments/assets/082ca02a-e1a5-454c-b615-537646f9bd4a)
 
